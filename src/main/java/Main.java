@@ -35,6 +35,7 @@ public class Main {
                 case 10 -> swapTwo(15, 42);
                 case 11 -> fizzBuzz();
                 case 12 -> gradeCalculator();
+                case 13 -> weekdayChecker();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -212,4 +213,15 @@ public class Main {
         }
     }
 
+    private void weekdayChecker()
+    {
+        IO.print("Enter day: ");
+        String day = sc.nextLine();
+        switch (day)
+        {
+            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> IO.println("Weekday");
+            case "Saturday", "Sunday" -> IO.println("Weekend");
+            default -> IO.println("Unknown day");
+        }
+    }
 }
