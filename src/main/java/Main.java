@@ -34,6 +34,7 @@ public class Main {
                 case 9 -> temperatureConverter();
                 case 10 -> swapTwo(15, 42);
                 case 11 -> fizzBuzz();
+                case 12 -> gradeCalculator();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -177,6 +178,37 @@ public class Main {
         }
         else {
             return "" + n;
+        }
+    }
+
+    private void gradeCalculator()
+    {
+        IO.print("Enter score: ");
+        int score = sc.nextInt();
+        sc.nextLine();
+        if(score > 100 || score < 0)
+        {
+            IO.println("Invalid input, score must be 0 - 100");
+        }
+        else if(score >= 90)
+        {
+            IO.println("Grade: A");
+        }
+        else if(score >= 80)
+        {
+            IO.println("Grade: B");
+        }
+        else if(score >= 70)
+        {
+            IO.println("Grade: C");
+        }
+        else if(score >= 60)
+        {
+            IO.println("Grade: D");
+        }
+        else
+        {
+            IO.println("Grade: F");
         }
     }
 
