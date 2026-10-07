@@ -3,10 +3,11 @@ import java.util.Scanner;
 public class Main {
     void main()
     {
-        //Person.personDemo();
-        //leapYearDemo();
-        //Item.purchaseItemsDemo();
+        Person.personDemo();
+        leapYearDemo();
+        Item.purchaseItemsDemo();
         AvarageOfThreeDemo();
+        greetingDemo();
 
 
     }
@@ -43,6 +44,17 @@ public class Main {
         int third = sc.nextInt();
         double average = (first+second+third)/3.0;
         IO.println("Average: " + average);
+        sc.close();
+    }
+
+    private static void greetingDemo()
+    {
+        Scanner sc = new Scanner(System.in);
+        IO.print("Enter first name: ");
+        String first = sc.nextLine();
+        IO.print("Enter last name: ");
+        String last = sc.nextLine();
+        IO.println("Hello, " + first + " "+ last + "! Welcome aboard.");
         sc.close();
     }
 }
