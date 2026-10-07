@@ -7,16 +7,33 @@ public class Main {
     {
         sc = new Scanner(System.in);
 
-        Person.personDemo();
-        leapYearDemo();
-        Item.purchaseItemsDemo();
-        averageOfThreeDemo();
-        greetingDemo();
-        arithmeticDemo();
-        convertSecondsDemo();
-        guessNumber();
+        exerciseSelection();
         sc.close();
 
+    }
+
+    private void exerciseSelection()
+    {
+        boolean running = true;
+        while(running)
+        {
+            IO.print("Enter the number of the exercise you want to run (enter 0 to quit): ");
+            int exercise = sc.nextInt();
+            sc.nextLine();
+            switch (exercise)
+            {
+                case 0 -> running = false;
+                case 1 -> Person.personDemo();
+                case 2 -> leapYearDemo();
+                case 3 -> Item.purchaseItemsDemo();
+                case 4 -> averageOfThreeDemo();
+                case 5 -> greetingDemo();
+                case 6 -> arithmeticDemo();
+                case 7 -> convertSecondsDemo();
+                case 8 -> guessNumber();
+                default -> IO.println("Seems like no exercise of that number has been completed");
+            }
+        }
     }
 
     private void leapYearDemo()
