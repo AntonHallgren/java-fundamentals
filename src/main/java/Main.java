@@ -37,6 +37,7 @@ public class Main {
                 case 12 -> gradeCalculator();
                 case 13 -> weekdayChecker();
                 case 14 -> multiplicationTable();
+                case 15 -> reverseNumber();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -235,5 +236,19 @@ public class Main {
         {
             IO.println(x + " x " + y + " = " + (x*y));
         }
+    }
+
+    private void reverseNumber()
+    {
+        IO.print("Enter a number: ");
+        int number = sc.nextInt();
+        sc.nextLine();
+        int reversed = 0;
+        while(number != 0)
+        {
+            reversed = 10 * reversed + number % 10;
+            number = number / 10;
+        }
+        IO.println("Reversed: " + reversed);
     }
 }
