@@ -36,6 +36,7 @@ public class Main {
                 case 11 -> fizzBuzz();
                 case 12 -> gradeCalculator();
                 case 13 -> weekdayChecker();
+                case 14 -> multiplicationTable();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -222,6 +223,17 @@ public class Main {
             case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> IO.println("Weekday");
             case "Saturday", "Sunday" -> IO.println("Weekend");
             default -> IO.println("Unknown day");
+        }
+    }
+
+    private void multiplicationTable()
+    {
+        IO.print("Enter a number: ");
+        int x = sc.nextInt();
+        sc.nextLine();
+        for(int y = 1; y <= 10; y++)
+        {
+            IO.println(x + " x " + y + " = " + (x*y));
         }
     }
 }
