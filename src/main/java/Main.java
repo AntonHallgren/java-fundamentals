@@ -33,6 +33,7 @@ public class Main {
                 case 8 -> guessNumber();
                 case 9 -> temperatureConverter();
                 case 10 -> swapTwo(15, 42);
+                case 11 -> fizzBuzz();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -150,4 +151,33 @@ public class Main {
         a = a - b;//=b0
         IO.println("After: a = " + a + ", b = " + b);
     }
+
+    private void fizzBuzz()
+    {
+        for(int i = 1; i <= 30; i++)
+        {
+            IO.println(fizzBuzzOne(i));
+        }
+
+    }
+
+    private String fizzBuzzOne(int n)
+    {
+        if(n%3 == 0 && n%5 == 0)//equivalently n%15 == 0
+        {
+            return "FizzBuzz";
+        }
+        else if(n%3 == 0)
+        {
+            return "Fizz";
+        }
+        else if(n%5 == 0)
+        {
+            return "Buzz";
+        }
+        else {
+            return "" + n;
+        }
+    }
+
 }
