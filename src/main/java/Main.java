@@ -1,20 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner sc;
+
     void main()
     {
+        sc = new Scanner(System.in);
         Person.personDemo();
         leapYearDemo();
         Item.purchaseItemsDemo();
-        AvarageOfThreeDemo();
+        averageOfThreeDemo();
         greetingDemo();
-
+        sc.close();
 
     }
 
-    private static void leapYearDemo()
+    private void leapYearDemo()
     {
-        Scanner sc = new Scanner(System.in);
         IO.print("Enter a year: ");
         int year = sc.nextInt();
         if(leapYearCalculation(year))
@@ -25,7 +27,7 @@ public class Main {
         {
             IO.println(year + " is NOT a leap year.");
         }
-        sc.close();
+        sc.nextLine();
     }
 
     private static boolean leapYearCalculation(int year)
@@ -33,9 +35,8 @@ public class Main {
         return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
     }
 
-    private static void AvarageOfThreeDemo()
+    private void averageOfThreeDemo()
     {
-        Scanner sc = new Scanner(System.in);
         IO.print("Enter first number: ");
         int first = sc.nextInt();
         IO.print("Enter second number: ");
@@ -44,17 +45,15 @@ public class Main {
         int third = sc.nextInt();
         double average = (first+second+third)/3.0;
         IO.println("Average: " + average);
-        sc.close();
+        sc.nextLine();
     }
 
-    private static void greetingDemo()
+    private void greetingDemo()
     {
-        Scanner sc = new Scanner(System.in);
         IO.print("Enter first name: ");
         String first = sc.nextLine();
         IO.print("Enter last name: ");
         String last = sc.nextLine();
         IO.println("Hello, " + first + " "+ last + "! Welcome aboard.");
-        sc.close();
     }
 }
