@@ -31,6 +31,7 @@ public class Main {
                 case 6 -> arithmeticDemo();
                 case 7 -> convertSecondsDemo();
                 case 8 -> guessNumber();
+                case 9 -> temperatureConverter();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -128,5 +129,15 @@ public class Main {
                 IO.println("Too big!");
             }
         }
+    }
+
+    private void temperatureConverter()
+    {
+        IO.print("Enter temperature in Celsius: ");
+        int inC = sc.nextInt();
+        sc.nextLine();
+        IO.println("Celsius:    " + (double)inC + " °C");
+        IO.println("Fahrenheit: " + (inC*9.0/5 + 32) + " °F");
+        IO.println("Kelvin:     " + (inC + 273.15) + "K");
     }
 }
