@@ -6,11 +6,13 @@ public class Main {
     void main()
     {
         sc = new Scanner(System.in);
+
         Person.personDemo();
         leapYearDemo();
         Item.purchaseItemsDemo();
         averageOfThreeDemo();
         greetingDemo();
+        arithmeticDemo();
         sc.close();
 
     }
@@ -55,5 +57,18 @@ public class Main {
         IO.print("Enter last name: ");
         String last = sc.nextLine();
         IO.println("Hello, " + first + " "+ last + "! Welcome aboard.");
+    }
+
+    private void arithmeticDemo()
+    {
+        IO.print("Enter first number: ");
+        int first = sc.nextInt();
+        IO.print("Enter second number: ");
+        int second = sc.nextInt();
+        IO.println(first + " + " + second + " = " + (first + second));
+        IO.println(first + " - " + second + " = " + (first - second));
+        IO.println(first + " * " + second + " = " + (first * second));
+        IO.println(first + " / " + second + " = " + (first / second));//cast at least one of the values before dividing to avoid rounding
+        sc.nextLine();
     }
 }
