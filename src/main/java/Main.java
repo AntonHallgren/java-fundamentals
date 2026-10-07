@@ -13,6 +13,7 @@ public class Main {
         averageOfThreeDemo();
         greetingDemo();
         arithmeticDemo();
+        convertSecondsDemo();
         sc.close();
 
     }
@@ -70,5 +71,18 @@ public class Main {
         IO.println(first + " * " + second + " = " + (first * second));
         IO.println(first + " / " + second + " = " + (first / second));//cast at least one of the values before dividing to avoid rounding
         sc.nextLine();
+    }
+
+    private void convertSecondsDemo()
+    {
+        IO.print("Enter seconds: ");
+        int seconds = sc.nextInt();
+        sc.nextLine();
+        int hours = seconds / 3600;
+        seconds = seconds % 3600;
+        int minutes = seconds / 60;
+        seconds = seconds % 60;
+        IO.println(hours + ":" + minutes + ":" + seconds);
+
     }
 }
