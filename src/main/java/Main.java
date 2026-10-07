@@ -14,6 +14,7 @@ public class Main {
         greetingDemo();
         arithmeticDemo();
         convertSecondsDemo();
+        guessNumber();
         sc.close();
 
     }
@@ -83,6 +84,32 @@ public class Main {
         int minutes = seconds / 60;
         seconds = seconds % 60;
         IO.println(hours + ":" + minutes + ":" + seconds);
+    }
 
+    private void guessNumber()
+    {
+        int randomNumber = (int) (1 + Math.random()*500);
+        int numberGuesses = 0;
+        boolean gotIt = false;
+        IO.println("Guess the number 1 - 500");
+        while(!gotIt)
+        {
+            IO.print("Enter your guess: ");
+            int guess = sc.nextInt();
+            sc.nextLine();
+            numberGuesses++;
+            if(guess == randomNumber)
+            {
+                gotIt = true;
+                IO.println("Correct! You got it in " + numberGuesses + " guessess");
+            }
+            else if(guess < randomNumber)
+            {
+                IO.println("Too small!");
+            }
+            else {
+                IO.println("Too big!");
+            }
+        }
     }
 }
