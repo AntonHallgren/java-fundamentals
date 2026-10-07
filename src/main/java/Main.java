@@ -32,6 +32,7 @@ public class Main {
                 case 7 -> convertSecondsDemo();
                 case 8 -> guessNumber();
                 case 9 -> temperatureConverter();
+                case 10 -> swapTwo(15, 42);
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -139,5 +140,14 @@ public class Main {
         IO.println("Celsius:    " + (double)inC + " °C");
         IO.println("Fahrenheit: " + (inC*9.0/5 + 32) + " °F");
         IO.println("Kelvin:     " + (inC + 273.15) + "K");
+    }
+
+    private static void swapTwo(int a, int b)
+    {
+        IO.println("Before: a = " + a + ", b = " + b);
+        a = a + b;//=a0 + b0
+        b = a - b;//=a0
+        a = a - b;//=b0
+        IO.println("After: a = " + a + ", b = " + b);
     }
 }
