@@ -3,20 +3,15 @@ import java.util.Scanner;
 public class Main {
     void main()
     {
-        //Not using my own details here
-        Person p = new Person("Sven Svensson", 42, "Stockholm");
-        p.printProfile();
-
-
-
-        leapYearProcess();
-
+        //Person.personDemo();
+        //leapYearDemo();
+        Item.purchaseItemsDemo();
 
 
 
     }
 
-    private void leapYearProcess()
+    private static void leapYearDemo()
     {
         Scanner sc = new Scanner(System.in);
         IO.print("Enter a year: ");
@@ -32,7 +27,7 @@ public class Main {
         sc.close();
     }
 
-    private boolean leapYearCalculation(int year)
+    private static boolean leapYearCalculation(int year)
     {
         return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
     }

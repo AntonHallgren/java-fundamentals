@@ -23,4 +23,10 @@ public class Person
         IO.println("==================");
     }
 
+    public static void personDemo()
+    {
+        //Not using my own details here
+        Person p = new Person("Sven Svensson", 42, "Stockholm");
+        p.printProfile();
+    }
 }
