@@ -15,6 +15,7 @@ public class Exercises2 {
                 case 0 -> running = false;
                 case 1 -> wordReverser();
                 case 2 -> emailSlicer();
+                case 3 -> stringStats();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -39,5 +40,58 @@ public class Exercises2 {
         }
         IO.println("Username: " + email.substring(0, index));
         IO.println("Domain: " +  email.substring(index+1));
+    }
+
+    private enum CharCategory
+    {
+        VOWEL, CONSONANT, DIGIT, SPACE, OTHER
+    }
+
+    private static void stringStats()
+    {
+
+        String s = IO.readln("Enter a sentence: ");
+        int vowels =0;
+        int consonants = 0;
+        int digits = 0;
+        int spaces = 0;
+        for(int i = 0; i < s.length(); i++)
+        {
+            switch (categoriseChar(s.charAt(i)))
+            {
+                case CharCategory.VOWEL -> vowels++;
+                case CharCategory.CONSONANT -> consonants++;
+                case CharCategory.DIGIT -> digits++;
+                case CharCategory.SPACE -> spaces++;
+            }
+        }
+        IO.println(String.format("Vowels    : %d", vowels));
+        IO.println(String.format("Consonants: %d", consonants));
+        IO.println(String.format("Digits    : %d", digits));
+        IO.println(String.format("Spaces    : %d", spaces));
+
+    }
+
+    private static CharCategory categoriseChar(char c)
+    {
+        if(c == ' ')
+        {
+            return CharCategory.SPACE;//space
+        }
+        if(Character.isDigit(c))
+        {
+            return CharCategory.DIGIT;
+        }
+        if(!Character.isLetter(c))
+        {
+            //not any of the categories we are looking at
+            return CharCategory.OTHER;
+        }
+        //from what I could find, there is no inbuilt check for vowels/consonants
+        if("aeiouyåäö".indexOf(Character.toLowerCase(c)) != -1)
+        {
+            return CharCategory.VOWEL;
+        }
+        return CharCategory.CONSONANT;
     }
 }
