@@ -101,17 +101,15 @@ public class Exercises2 {
     private static void initialsGenerator()
     {
         String fullName = IO.readln("Enter full name: ").trim();
+        String[] names = fullName.split(" ");
         StringBuilder initials = new StringBuilder();
-        int index = -1;
-        boolean done = false;
-        while(!done)
+        for(String n : names)
         {
-            initials.append(fullName.charAt(index + 1)).append(".");
-            index = fullName.indexOf(' ', index+1);
-            if(index == -1)
+            if(n.isEmpty())
             {
-                done = true;
+                continue;
             }
+            initials.append(n.charAt(0)).append('.');
         }
         IO.println("Initials: " +  initials.toString().toUpperCase());
     }
