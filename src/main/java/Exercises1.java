@@ -11,7 +11,7 @@ public class Exercises1 {
         boolean running = true;
         while(running)
         {
-            IO.print("Enter the number of the exercise you want to run (enter 0 to quit): ");
+            IO.print("\nEnter the number of the exercise you want to run (enter 0 to quit): ");
 
             int exercise = Integer.parseInt(IO.readln().trim());
             switch (exercise)

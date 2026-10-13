@@ -7,7 +7,7 @@ void main() {
 private void exerciseSetSelection() {
     boolean running = true;
     while (running) {
-        IO.print("Which set of exercises (enter 0 to quit): ");
+        IO.print("\nWhich set of exercises (enter 0 to quit): ");
         int exercise = Integer.parseInt(IO.readln().trim());
         switch (exercise) {
             case 0 -> running = false;

@@ -8,7 +8,7 @@ public class Exercises2 {
         boolean running = true;
         while(running)
         {
-            IO.print("Enter the number of the exercise you want to run (enter 0 to quit): ");
+            IO.print("\nEnter the number of the exercise you want to run (enter 0 to quit): ");
             int exercise = Integer.parseInt(IO.readln().trim());
             switch (exercise)
             {
@@ -18,6 +18,7 @@ public class Exercises2 {
                 case 3 -> stringStats();
                 case 4 -> initialsGenerator();
                 case 5 -> palindromeChecker();
+                case 6 -> wordCounter();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -128,4 +129,22 @@ public class Exercises2 {
             IO.println(word + " is NOT a palindrome");
         }
     }
+
+    private static void wordCounter()
+    {
+        String sentence = IO.readln("Enter a sentence: ");
+        String wordToFind = IO.readln("Enter word to find: ");
+        String[] wordsInSentence = sentence.split(" ");
+        int found = 0;
+        for(String word : wordsInSentence)
+        {
+            if(word.equals(wordToFind))
+            {
+                found++;
+            }
+        }
+        IO.println(String.format("Total words: %d", wordsInSentence.length));
+        IO.println(String.format("\"%s\" appears: %d times", wordToFind, found));
+    }
+
 }
