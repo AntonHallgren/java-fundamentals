@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Exercises2 {
     //shortcut
     static void main() {
@@ -16,6 +18,7 @@ public class Exercises2 {
                 case 1 -> wordReverser();
                 case 2 -> emailSlicer();
                 case 3 -> stringStats();
+                case 4 -> initialsGenerator();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -93,5 +96,23 @@ public class Exercises2 {
             return CharCategory.VOWEL;
         }
         return CharCategory.CONSONANT;
+    }
+
+    private static void initialsGenerator()
+    {
+        String fullName = IO.readln("Enter full name: ").trim();
+        StringBuilder initials = new StringBuilder();
+        int index = -1;
+        boolean done = false;
+        while(!done)
+        {
+            initials.append(fullName.charAt(index+1) + ".");
+            index = fullName.indexOf(' ', index+1);
+            if(index == -1)
+            {
+                done = true;
+            }
+        }
+        IO.println("Initials: " +  initials.toString().toUpperCase());
     }
 }
