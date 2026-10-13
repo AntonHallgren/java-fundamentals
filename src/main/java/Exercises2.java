@@ -1,5 +1,3 @@
-import java.util.Locale;
-
 public class Exercises2 {
     //shortcut
     static void main() {
@@ -19,6 +17,7 @@ public class Exercises2 {
                 case 2 -> emailSlicer();
                 case 3 -> stringStats();
                 case 4 -> initialsGenerator();
+                case 5 -> palindromeChecker();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -106,7 +105,7 @@ public class Exercises2 {
         boolean done = false;
         while(!done)
         {
-            initials.append(fullName.charAt(index+1) + ".");
+            initials.append(fullName.charAt(index + 1)).append(".");
             index = fullName.indexOf(' ', index+1);
             if(index == -1)
             {
@@ -114,5 +113,19 @@ public class Exercises2 {
             }
         }
         IO.println("Initials: " +  initials.toString().toUpperCase());
+    }
+
+    private static void palindromeChecker()
+    {
+        String word = IO.readln("Enter a word: ");
+        String reverse = (new StringBuilder(word)).reverse().toString();
+        if(reverse.equalsIgnoreCase(word))
+        {
+            IO.println(word + " is a palindrome");
+        }
+        else
+        {
+            IO.println(word + " is NOT a palindrome");
+        }
     }
 }
