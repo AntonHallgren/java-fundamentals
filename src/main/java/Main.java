@@ -7,9 +7,27 @@ public class Main {
     {
         sc = new Scanner(System.in);
 
-        exerciseSelection();
+        exerciseSetSelction();
         sc.close();
 
+    }
+
+    private void exerciseSetSelction()
+    {
+        boolean running = true;
+        while(running)
+        {
+            IO.print("Which set of exercises (enter 0 to quit): ");
+            int exercise = sc.nextInt();
+            sc.nextLine();
+            switch (exercise)
+            {
+                case 0 -> running = false;
+                case 1 -> exerciseSelection();
+                case 2 -> exersiceSelection2();
+                default -> IO.println("Seems like no set of exercises of that number");
+            }
+        }
     }
 
     private void exerciseSelection()
@@ -38,6 +56,22 @@ public class Main {
                 case 13 -> weekdayChecker();
                 case 14 -> multiplicationTable();
                 case 15 -> reverseNumber();
+                default -> IO.println("Seems like no exercise of that number has been completed");
+            }
+        }
+    }
+
+    private void exersiceSelection2()
+    {
+        boolean running = true;
+        while(running)
+        {
+            IO.print("Enter the number of the exercise you want to run (enter 0 to quit): ");
+            int exercise = sc.nextInt();
+            sc.nextLine();
+            switch (exercise)
+            {
+                case 0 -> running = false;
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
