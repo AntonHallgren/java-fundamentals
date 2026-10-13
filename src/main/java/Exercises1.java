@@ -1,5 +1,11 @@
 public class Exercises1 {
 
+    //shortcut
+    static void main() {
+        exerciseSelection();
+    }
+
+
     public static void exerciseSelection()
     {
         boolean running = true;

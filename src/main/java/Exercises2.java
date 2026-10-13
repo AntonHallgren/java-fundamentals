@@ -1,5 +1,9 @@
 public class Exercises2 {
-    public static void exerciseSelection2()
+    //shortcut
+    static void main() {
+        exerciseSelection();
+    }
+    public static void exerciseSelection()
     {
         boolean running = true;
         while(running)
@@ -10,6 +14,7 @@ public class Exercises2 {
             {
                 case 0 -> running = false;
                 case 1 -> wordReverser();
+                case 2 -> emailSlicer();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -22,4 +27,17 @@ public class Exercises2 {
         IO.println("Reversed; " + word);
     }
 
+    private static void emailSlicer()
+    {
+        IO.println("Enter email: ");
+        String email = IO.readln();
+        int index = email.indexOf('@');
+        if(index == -1)
+        {
+            IO.println("Invalid email");
+            return;
+        }
+        IO.println("Username: " + email.substring(0, index));
+        IO.println("Domain: " +  email.substring(index+1));
+    }
 }

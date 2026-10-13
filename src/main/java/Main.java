@@ -19,7 +19,7 @@ public class Main {
             {
                 case 0 -> running = false;
                 case 1 -> Exercises1.exerciseSelection();
-                case 2 -> Exercises2.exerciseSelection2();
+                case 2 -> Exercises2.exerciseSelection();
                 default -> IO.println("Seems like no set of exercises of that number");
             }
         }
