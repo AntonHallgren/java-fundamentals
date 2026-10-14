@@ -27,6 +27,7 @@ public class Exercises2 {
                 case 10 -> numberCruncher();
                 case 11 -> diceStatistics();
                 case 12 -> passwordGenerator();
+                case 13 -> receiptBuilder();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -266,6 +267,39 @@ public class Exercises2 {
             }
         }
         IO.println(String.format("Generated password: %s", pass.toString()));
+    }
+
+    private static void receiptBuilder()
+    {
+        String line =     "==========================\n";
+        String thinLine = "--------------------------\n";
+
+        StringBuilder receipt = new StringBuilder();
+        receipt.append(line);
+        receipt.append("\tReceipt\n");
+        receipt.append(line);
+        boolean done = false;
+        double total = 0;
+        while(!done)
+        {
+            String next = IO.readln("Enter item name (or done): ");
+            if(next.equalsIgnoreCase("done"))
+            {
+                done = true;
+            }
+            else
+            {
+                double price = Double.parseDouble(IO.readln("Enter price: "));
+                total += price;
+                receipt.append(next);
+                receipt.append(String.format("\t%.2f\n", price));
+            }
+        }
+        receipt.append(thinLine);
+        receipt.append(String.format("Grand Total:\t%.2f\n", total));
+        receipt.append(line);
+        IO.print(receipt);
+
     }
 
 }
