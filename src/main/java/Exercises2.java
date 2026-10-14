@@ -20,6 +20,7 @@ public class Exercises2 {
                 case 5 -> palindromeChecker();
                 case 6 -> wordCounter();
                 case 7 -> circleCalculator();
+                case 8 -> powerTable();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -154,6 +155,16 @@ public class Exercises2 {
         IO.println(String.format("Area          : %.2f", area));
         IO.println(String.format("Circumference : %.2f", circumference));
 
+    }
+
+    private static void powerTable()
+    {
+        int base = Integer.parseInt(IO.readln("Enter base: "));
+        for(int i = 1; i <= 10; i++)
+        {
+            double result = Math.pow(base, i);
+            IO.println(String.format("%d ^ %d = %.1f", base, i, result));
+        }
     }
 
 }
