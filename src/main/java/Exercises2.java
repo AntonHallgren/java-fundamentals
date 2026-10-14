@@ -318,4 +318,13 @@ public class Exercises2 {
         }
     }
 
+    private static void ageCalculator()
+    {
+        int by = Integer.parseInt(IO.readln("Enter birth year :"));
+        int bm = Integer.parseInt(IO.readln("Enter birth month:"));
+        int bd = Integer.parseInt(IO.readln("Enter birth day  :"));
+        LocalDate bDate = LocalDate.of(by, bm, bd);
+        LocalDate now = LocalDate.now();
+    }
+
 }
