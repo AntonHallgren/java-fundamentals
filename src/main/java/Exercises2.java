@@ -21,6 +21,7 @@ public class Exercises2 {
                 case 6 -> wordCounter();
                 case 7 -> circleCalculator();
                 case 8 -> powerTable();
+                case 9 -> rightTriangleChecker();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -164,6 +165,31 @@ public class Exercises2 {
         {
             double result = Math.pow(base, i);
             IO.println(String.format("%d ^ %d = %.1f", base, i, result));
+        }
+    }
+
+    private static void rightTriangleChecker()
+    {
+        double a = Double.parseDouble(IO.readln("Enter side a: "));
+        double b = Double.parseDouble(IO.readln("Enter side b: "));
+        double c = Double.parseDouble(IO.readln("Enter side c: "));
+        double longest = Math.max(a, Math.max(b, c));
+        IO.println(String.format("Longest side: %.1f", longest));
+        /*
+        *For small known integer exponents, it is
+        * preferable to write out the multiplication
+        * rather than using Math.pow()
+        *In the formula below, whichever side is longest
+        * should cancel out once and leave us with Pythagoras
+        *It is generally preferable to not use exact comparison with double
+        * */
+        if(a*a +  b*b + c*c == 2*longest*longest)
+        {
+            IO.println("This is a right triangle");
+        }
+        else
+        {
+            IO.println("This is NOT a right triangle");
         }
     }
 
