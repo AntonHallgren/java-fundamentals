@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Exercises2 {
     //shortcut
@@ -30,6 +31,7 @@ public class Exercises2 {
                 case 12 -> passwordGenerator();
                 case 13 -> receiptBuilder();
                 case 14 -> todaysCalender();
+                case 15 -> ageCalculator();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -320,11 +322,16 @@ public class Exercises2 {
 
     private static void ageCalculator()
     {
-        int by = Integer.parseInt(IO.readln("Enter birth year :"));
-        int bm = Integer.parseInt(IO.readln("Enter birth month:"));
-        int bd = Integer.parseInt(IO.readln("Enter birth day  :"));
+        int by = Integer.parseInt(IO.readln("Enter birth year : "));
+        int bm = Integer.parseInt(IO.readln("Enter birth month: "));
+        int bd = Integer.parseInt(IO.readln("Enter birth day  : "));
         LocalDate bDate = LocalDate.of(by, bm, bd);
         LocalDate now = LocalDate.now();
+        long years = bDate.until(now, ChronoUnit.YEARS);
+        LocalDate nextBDay = bDate.plusYears(years+1);
+        long remainingDays = now.until(nextBDay, ChronoUnit.DAYS);
+        IO.println(String.format("Your age            : %d years", years));
+        IO.println(String.format("Days until birthday : %d", remainingDays));
     }
 
 }
