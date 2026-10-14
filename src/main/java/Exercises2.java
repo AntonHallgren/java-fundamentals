@@ -1,4 +1,5 @@
-import java.util.Dictionary;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Exercises2 {
     //shortcut
@@ -28,6 +29,7 @@ public class Exercises2 {
                 case 11 -> diceStatistics();
                 case 12 -> passwordGenerator();
                 case 13 -> receiptBuilder();
+                case 14 -> todaysCalender();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -266,7 +268,7 @@ public class Exercises2 {
                 pass.append((char)('0' + r - 2 * LETTERS));
             }
         }
-        IO.println(String.format("Generated password: %s", pass.toString()));
+        IO.println(String.format("Generated password: %s", pass));
     }
 
     private static void receiptBuilder()
@@ -300,6 +302,20 @@ public class Exercises2 {
         receipt.append(line);
         IO.print(receipt);
 
+    }
+
+    private static void todaysCalender()
+    {
+        LocalDate now = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("eeee, dd MMMM yyyy");
+        IO.println("Today is: " + now.format(formatter));
+        switch (now.getDayOfWeek())
+        {
+            case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY ->
+                    IO.println("It is a Weekday");
+            case SATURDAY, SUNDAY ->
+                    IO.println("It is the Weekend.");
+        }
     }
 
 }
