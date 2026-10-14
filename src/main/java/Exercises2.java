@@ -1,3 +1,5 @@
+import java.util.Dictionary;
+
 public class Exercises2 {
     //shortcut
     static void main() {
@@ -24,6 +26,7 @@ public class Exercises2 {
                 case 9 -> rightTriangleChecker();
                 case 10 -> numberCruncher();
                 case 11 -> diceStatistics();
+                case 12 -> passwordGenerator();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -240,5 +243,29 @@ public class Exercises2 {
         IO.println(String.format("Doubles rolled: %d out of %d", doubleRolls, numberOfRolls));
     }
 
+    private static void passwordGenerator()
+    {
+        int length = Integer.parseInt(IO.readln("Enter password length: "));
+        final int DIGITS = 10;
+        final int LETTERS = 26;
+        StringBuilder pass = new StringBuilder();
+        for(int i = 0; i < length; i++)
+        {
+            int r = (int) ((DIGITS + 2 * LETTERS) * Math.random());
+            if(r < LETTERS)
+            {
+                pass.append((char)('a' + r));
+            }
+            else if(r < 2 * LETTERS)
+            {
+                pass.append((char)('A' + r - LETTERS));
+            }
+            else
+            {
+                pass.append((char)('0' + r - 2 * LETTERS));
+            }
+        }
+        IO.println(String.format("Generated password: %s", pass.toString()));
+    }
 
 }
