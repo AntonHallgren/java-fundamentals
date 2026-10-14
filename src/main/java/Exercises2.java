@@ -19,6 +19,7 @@ public class Exercises2 {
                 case 4 -> initialsGenerator();
                 case 5 -> palindromeChecker();
                 case 6 -> wordCounter();
+                case 7 -> circleCalculator();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -143,6 +144,16 @@ public class Exercises2 {
         }
         IO.println(String.format("Total words: %d", wordsInSentence.length));
         IO.println(String.format("\"%s\" appears: %d times", wordToFind, found));
+    }
+
+    private static void circleCalculator()
+    {
+        double radius = Double.parseDouble(IO.readln("Enter radius: "));
+        double area = Math.PI * radius * radius;
+        double circumference = 2 * Math.PI * radius;
+        IO.println(String.format("Area          : %.2f", area));
+        IO.println(String.format("Circumference : %.2f", circumference));
+
     }
 
 }
