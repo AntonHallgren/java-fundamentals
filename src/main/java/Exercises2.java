@@ -22,6 +22,7 @@ public class Exercises2 {
                 case 7 -> circleCalculator();
                 case 8 -> powerTable();
                 case 9 -> rightTriangleChecker();
+                case 10 -> numberCruncher();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -193,4 +194,30 @@ public class Exercises2 {
         }
     }
 
+    private static void numberCruncher()
+    {
+        int first  = Integer.parseInt(IO.readln("Enter first number : "));
+        int second = Integer.parseInt(IO.readln("Enter second number: "));
+        int third  = Integer.parseInt(IO.readln("Enter third number : "));
+        IO.println(String.format("Maximum : %d", findMax(first, second, third)));
+        IO.println(String.format("Minimum : %d", findMin(first, second, third)));
+        IO.println(String.format("Average : %.2f", average(first, second, third)));
+    }
+
+    //considered using this in exercise 9 but realised
+    // that this one uses int while e9 seems to want to use double
+    private static int findMax(int a, int b, int c)
+    {
+        return Math.max(a, Math.max(b, c));
+    }
+
+    private static int findMin(int a, int b, int c)
+    {
+        return Math.min(a, Math.min(b, c));
+    }
+
+    private static double average(int a, int b, int c)
+    {
+        return (a + b + c)/3.0;
+    }
 }
