@@ -23,6 +23,7 @@ public class Exercises2 {
                 case 8 -> powerTable();
                 case 9 -> rightTriangleChecker();
                 case 10 -> numberCruncher();
+                case 11 -> diceStatistics();
                 default -> IO.println("Seems like no exercise of that number has been completed");
             }
         }
@@ -220,4 +221,24 @@ public class Exercises2 {
     {
         return (a + b + c)/3.0;
     }
+
+    private static void diceStatistics()
+    {
+        int numberOfRolls = Integer.parseInt(IO.readln("How many rolls? "));
+        int doubleRolls = 0;
+        for(int i = 1; i <= numberOfRolls; i++)
+        {
+            int roll1 = 1 + (int) (6 * Math.random());
+            int roll2 = 1 + (int) (6 * Math.random());
+            boolean dr = roll1 == roll2;
+            if(dr)
+            {
+                doubleRolls++;
+            }
+            IO.println(String.format("Roll %d: %d + %d = %d%s", i, roll1, roll2, roll1 + roll2, dr ? " Double!": ""));
+        }
+        IO.println(String.format("Doubles rolled: %d out of %d", doubleRolls, numberOfRolls));
+    }
+
+
 }
